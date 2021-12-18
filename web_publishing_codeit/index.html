@@ -1,0 +1,58 @@
+<!DOCTYPE html> <!--  버전 알려주는 것 -->
+<html>
+    <head>
+        <title>My First Website</title> <!--제목-->
+        <meta charset="utf-8"> <!--한글 깨짐 방지 (head 태그 안에 위치하는 것을 권장)-->
+        <style>
+            h1 {
+            font-size: 64px; 
+            text-align: center; /* right, left 있다 */
+            /* color: lime, hotpink, blue ... */
+            }
+        
+            h3 {
+                margin-top: 100px;
+                /* margin-bottom, margin-left*/
+            }
+        
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            </style>
+    </head>
+    <body>
+    <h1>My First Page</h1> <!--헤딩1 (6까지 쓸 수 있다)-->
+    <h2>I love HTML!</h2>
+    
+    <p>show me the money</p><!--사용시 위아래로 공백-->
+    <b>black sheep wall</b> <!--공백-->
+    <i>operation cwal</i> <!--이탤릭-->
+    <em>hi</em> <!--강조, 생김새는 이탤릭-->
+    <strong>hello</strong> <!--강조, 생김새는 볼드-->
+    <!--위의 em과 strong 같은 경우 강조하는 것을 웹이 인식한다-->
+    <a href="folder1/page1.html">페이지 1</a>
+    <a href="folder1/folder2/page2.html">페이지 2</a>
+    <a href="folder1/folder2/page3.html">페이지 3</a>
+    <img src="https://1.bp.blogspot.com/-lHbVtSJH5eM/YSsUXNb8fqI/AAAAAAAAA54/34b8Kst23VINwNoFY9aPd4HlxUFsvrodwCLcBGAsYHQ/s1400/Spiderman%2Bhello%2Btobey.jpg" width="800">
+    <img src="folder1/images/hello_tobey.jpg">
+    </body>
+</html>
+
+<!--
+    head,body,html은 옵셔널 태그이므로 필수가 아니다.
+-->
+<!--
+    <a>는 anchor, 하이퍼링크이며 <a href="link" target="_blank">설명</a>
+-->
+<!--
+    target="_blank" 는 새탭에서 링크를 열게 한다.
+-->
+<!--
+ 외부링크 말고 내부에서 이동하는 링크를 만들 수도 있다.
+ <a href="folder1/page1.html">page 1</a>
+-->
+<!--
+    <a href="#"> ->스스로를 링크, 혹은 페이지 최상단
+-->
