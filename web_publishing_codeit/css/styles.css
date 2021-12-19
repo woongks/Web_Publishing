@@ -1,0 +1,44 @@
+.centered-text {
+    text-align: center;
+    font-size: 32px;
+}
+.big-blue-text{          /* class */
+    font-size: 64px;
+    color: blue;
+}
+#best-text {
+    color: orange
+}
+h1 {
+font-size: 64px; 
+text-align: center; /* right, left 있다 */
+/* color: lime, hotpink, blue ... */
+}
+
+h3 {
+    margin-top: 100px;
+    /* margin-bottom, margin-left*/
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+.lol {
+    background-color: #eee;
+    border-radius: 20px;   
+    margin-bottom: 50px;
+    padding: 50px;     /* 백그라운드 컬러 내부에 공간을 주는 것*/
+    width: 500px; /*가로 길이 줄이기*/
+    margin-left: auto;
+    margin-right: auto;      /*좌우 자동 정렬: 중앙 정렬*/
+}
+.lol .name {
+    color: salmon;                       /*class 내부에 class를 줄 수도 있다*/
+}
+.lol .pic {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}

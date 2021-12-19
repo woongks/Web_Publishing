@@ -3,32 +3,21 @@
     <head>
         <title>My First Website</title> <!--제목-->
         <meta charset="utf-8"> <!--한글 깨짐 방지 (head 태그 안에 위치하는 것을 권장)-->
-        <style>
-            h1 {
-            font-size: 64px; 
-            text-align: center; /* right, left 있다 */
-            /* color: lime, hotpink, blue ... */
-            }
-        
-            h3 {
-                margin-top: 100px;
-                /* margin-bottom, margin-left*/
-            }
-        
-            img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            </style>
+        <link href="css/styles.css" rel="stylesheet"> <!--css link 하기-->
     </head>
     <body>
-    <h1>My First Page</h1> <!--헤딩1 (6까지 쓸 수 있다)-->
-    <h2>I love HTML!</h2>
+    <h1>자칭 첫 웹페이지</h1> <!--헤딩1 (6까지 쓸 수 있다)-->
+    <h2>고딩 때도 배웠던 거 같은데 기분 탓인지..</h2>
     
-    <p>show me the money</p><!--사용시 위아래로 공백-->
-    <b>black sheep wall</b> <!--공백-->
-    <i>operation cwal</i> <!--이탤릭-->
+    <p>배우고 까먹지나 않았으면 좋겠다.</p><!--사용시 위아래로 공백-->
+    <p class="big-blue-text"> 이 문단은 클래스를 적용한 문단이다.</p>
+    <p class="centered-text"> 클래스를 적용하고 싶으면 .을 포함한 이름을 스타일 태그 안에 넣고 해당 이름을 
+        클래스를 적용하고 싶은 태그 내부에 적거라</p>
+    <p class="big-blue-text centered-text">클래스 여러 개 적용 가능 ㅎㅎ</p>
+    <p id="best-text">이것은 아이디를 적용한 문장이다. 스타일에 #으로 시작하는 태그를 만드시오
+    </p>
+    <b>안녕 토비!</b> <!--공백-->
+    <i>토비 안녕!</i> <!--이탤릭-->
     <em>hi</em> <!--강조, 생김새는 이탤릭-->
     <strong>hello</strong> <!--강조, 생김새는 볼드-->
     <!--위의 em과 strong 같은 경우 강조하는 것을 웹이 인식한다-->
@@ -36,7 +25,16 @@
     <a href="folder1/folder2/page2.html">페이지 2</a>
     <a href="folder1/folder2/page3.html">페이지 3</a>
     <img src="https://1.bp.blogspot.com/-lHbVtSJH5eM/YSsUXNb8fqI/AAAAAAAAA54/34b8Kst23VINwNoFY9aPd4HlxUFsvrodwCLcBGAsYHQ/s1400/Spiderman%2Bhello%2Btobey.jpg" width="800">
-    <img src="folder1/images/hello_tobey.jpg">
+    <div class='lol'>
+        <h1 class='name'>샤코</h1>
+        <img src="https://w.namu.la/s/bab4575ab0b2a95f819e5aa477a062da071114333a4249ee4eb451f4e98a942899203761d05a99fb868dc648aa8c4c4212db19a1a690195d8d8e7a44dac579508ac008bca3bae84c9ffe36c43f64e83482d57fc5b33abe179144e8f5aad97918" class='pic'>
+        <p class="centered-text">정글 챔프. 이 챔프로 시작해 첫 레벨30을 찍었다.</p>
+    </div>
+    <div class='lol'>
+        <h1 class='name'>르블랑</h1>
+        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg" class="pic">
+        <p class="centered-text">미드 챔프. 이 챔프로 미드를 시작했다.</p>
+    </div>
     </body>
 </html>
 
@@ -55,4 +53,10 @@
 -->
 <!--
     <a href="#"> ->스스로를 링크, 혹은 페이지 최상단
+-->
+<!-- 
+    특정 태그를 바꾸고 싶을 때 class를 사용한다.
+-->
+<!--
+    id는 중복으로 사용할 수도 없고 여러 개를 동시에 사용할 수도 없다.
 -->
