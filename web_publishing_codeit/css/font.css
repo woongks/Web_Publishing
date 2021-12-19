@@ -1,0 +1,12 @@
+@font-face{
+    src: url("../fonts/BMEULJIROTTF.ttf");      /*외부 폰트 가져옴*/
+    font-family: "Euljiro";
+}
+
+.euljiro {
+    font-family: "Euljiro";
+    font-size:32px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}

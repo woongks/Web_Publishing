@@ -5,16 +5,23 @@
 .big-blue-text{          /* class */
     font-size: 64px;
     color: blue;
+    text-align: center;
 }
 #best-text {
-    color: orange
+    color: orange;
 }
 h1 {
+font-family: "Times New Roman",Times, serif;  /*타임즈뉴로만 폰트 사용. 없으면 타임즈 적용*/
 font-size: 64px; 
+font-weight: 400; /* font 굵기는 100~900까지 있다. 100단위만 가능. font에 따라 굵기에 제한사항이 있다.*/
 text-align: center; /* right, left 있다 */
+text-decoration: underline; /*overline, line-through도 있다*/
+line-height: 80px; /*글자 위아래 공백을 정해준다. 폰트 종류와 사이즈에 영향을 받기 때문에 정확한 위아래 간격을 알기는 힘들다*/
 /* color: lime, hotpink, blue ... */
 }
-
+a {
+    text-decoration: none; /* decoration 없애기 */
+}
 h3 {
     margin-top: 100px;
     /* margin-bottom, margin-left*/
@@ -31,14 +38,26 @@ img {
     border-radius: 20px;   
     margin-bottom: 50px;
     padding: 50px;     /* 백그라운드 컬러 내부에 공간을 주는 것*/
-    width: 500px; /*가로 길이 줄이기*/
+    width: 800px; /*가로 길이 줄이기*/
     margin-left: auto;
     margin-right: auto;      /*좌우 자동 정렬: 중앙 정렬*/
 }
-.lol .name {
-    color: salmon;                       /*class 내부에 class를 줄 수도 있다*/
+.lol .name {   /*class 내부에 class를 줄 수도 있다*/
+    color: #9D5646;       /*커스텀된 color 준 것, rgb(#,#,#) 식으로 쓸 수도 있다*/ 
+    font-family: 'Twinkle Star', cursive;                  /*구글 폰트 적용한 것*/
 }
 .lol .pic {
     margin-top: 80px;
     margin-bottom: 80px;
+}
+
+.menu {
+    text-align:center;
+}
+.font-test1 {
+ font-size:24pt;    /* px의 1.33배*/
+}
+
+.font-test2 {
+    font-size: 150%; /*부모 요소의 폰트 크기를 따른다. 100으로 나누면 em과 같다*/
 }
