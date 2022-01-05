@@ -67,3 +67,275 @@
     id는 중복으로 사용할 수도 없고 여러 개를 동시에 사용할 수도 없다.
 -->
 <!--<span></span>은 div와 같은 기능인데 줄바꿈을 하지 않는다.-->
+
+<!--
+box model?
+
+모든 html 요소는 어떤 직사각형 box의 형태를 보인다.
+
+실제 내용을 감싸고 있는 빈 공간은 padding이라고 부른다.
+그리고 그 바깥 테두리는 border이다. 가장 바깥 테두리는 margin이다.
+
+-->
+
+<!--
+padding을 설정하는 방법은
+
+padding-top: 50px;
+padding-bottom: 20px;
+padding-left: 50px;
+padding-right: 50px;
+
+이렇게 하거나
+
+padding: 50px 50px 20px 50px;   (시계방향으로 돌리는 형태)
+padding: 50px 20px;   (두 개만 정해주면 위아래 50, 좌우 20이 된다.)
+
+margin도 같은 원리로 동작한다.
+좌우정렬 = margin-left: auto; margin-right: auto;
+
+min-width:            웹 크기를 줄이거나 늘릴 때 제한을 두는 것.
+max-width:
+min-width:
+max-width:
+
+overflow: hidden;    -> 보더를 넘는 구간은 자른다.
+overflow: scroll;    -> 넘는 구간을 스크롤로 볼 수 있게 한다.
+overflow: auto;      -> 글이 길어지면 자동으로 스크롤이 생긴다.
+
+테두리(border) 넣는 법 예시:
+
+border: 2px solid #4d9fff;
+
+또는
+
+border-style: solid;
+border-color: #4d9fff;
+border-width: 5px;
+
+등등 여러 방법이 있다.
+
+border: none;
+border: 0;                  -> border 없애기
+
+border-radius: 50px;        -> border 둥글게
+background-color: color;    -> 내부 색 (body, p 등등 어디 내부냐에 따라 달라짐)
+background-color: transparent; -> 투명도 있다.
+box-shadow: #px #px #px red   -> (세로 두께, 가로 두께, 그림자 퍼짐 정도, 색)
+
+box-sizing: border-box;   -> 전체 박스의 크기가 width, height로 정해진다. 나머지는 유동적으로 설정 가능하다. 기본 설정은 content-box이다.
+
+*{
+    모든 요소에 적용을 하게 되는 기능이다.
+}
+
+
+background-image: url("../~~")  -> 배경에 이미지 넣기
+background-repeat: repeat;  -> 배경 무한 반복
+background-size: #px #px;
+background-size: cover;  -> 배경 꽉 채우면서 비율 유지하기
+backgroud-position: right-bottom;  -> 사진이 잘려야 하는 상황이 올 때 어느 방향으로 잘리는지 정한다.
+background-position: center center;
+
+-->
+
+<!--
+선택자 정리
+
+
+css에서
+
+
+
+
+h1 {
+    모든 h1 태그에 대하여 적용
+}
+
+.hi {
+    모든 'hi'라는 클래스를 가진 태그에 대하여 적용
+}
+
+#hello {
+    모든 "hello"라는 id를 가진 태그에 대하여 적용
+}
+
+.wow i {
+    "wow"라는 클래스를 가진 태그 내부의 모든 자식 태그 i에 대하여 적용
+}
+
+.wow > i {
+    "wow"라는 클래스 내부의 직계 자식 태그 i에 대하여 적용   
+    (여기서 직계 자식은 wow 클래스가 적용된 클래스 바로 내부의 태그를 의미.
+     예를 들어 <div class="wow">
+         <i>hi</i>
+         <p>hi my name is<i>kim</i></p>
+     </div>
+     에서 직계 자식은 hi를 둘러싸고 있는 i 태그이다.
+     )
+
+}
+
+.hey, .hi {
+    "hey" 와 "hi" 클래스를 가진 태그 모두에 대하여 적용 (콤마 주의)
+}
+
+.hey .hi {
+    "hey" 와 "hi" 클래스를 모두 가진 태크에 대하여 적용
+}
+
+.hey p:nth-child(3) {
+    "hey" 클래스를 가진 태그 중 특정 조건을 가진 태그만 적용. 위의 예시는 3번째 p에 대하여 적용. first-child, last-child, not(:last child) 등이 있다.
+
+}
+
+h1:hover {
+    마우스가 해당 위치에 올라갔을 때 적용되는 것을 의미한다.
+}
+
+위를 이용해 버튼에 입체 효과를 줄 수 있다.
+예: .submit-btn:hover {
+    box-shadow: 0 2px 4px 0 rgba( 0, 0, 0, 0.50);
+}
+-->
+
+<!--
+
+    css는 상속 기능이 있다.
+    color, font-family, font-size, font-weight, line-height 등등 상속이 되는 속성이 있고 상속이 안되는 속성도 있다.
+    대표적으로 <a> 태그 같은 경우 color이 상속되지 않는다. 강제로 상속을 하려면 .div2 {color: inherit;} 을 해주면 된다.
+
+
+    같은 요소를 가리키지만 선택자가 다르다면, '명시도(specificity)'에 따라 우선 순위가 결정된다.
+
+    명시도 계산기
+    1. 인라인 스타일이 가장 우선 순위가 높다.
+    2. 선택자에 id가 많을 수록 우선 순위가 높다.
+    3. 선택자에 class, attribute, pseudo-class가 많을수록 우선 순위가 높다.
+    
+-->
+
+<!--
+
+css에는 px, rem, em, % 등 여러 단위가 있다.
+padding, margin, width 등 다양한 속성들에 이 단위를 사용할 수 있다.
+
+px는 절대적인 값이다.
+
+rem은 상대적인 값이지만 오직 <html> 태그의 font-size에만 영향을 받는다.
+
+2rem은 html 태그의 font-size의 두 배를 의미한다.
+
+em은 자기 자신의 font-size를 기준으로 한다. 만약 자신의 font-size가 없다면 상위 요소에서 상속받은 값을 기준으로 한다.
+
+% 역시 상대적인 값이고 font-size에 쓰일 경우 곱해주면 된다.
+
+margin이나 padding에 쓰면 width의 percentage를 의미한다.
+
+
+-->
+
+<!--
+
+display 속성
+
+inline, block, inline-block, list-item, table, flex, none 등을 의미하며 단 하나의 값만 가질 수 있다.
+
+inline display는 <span> <b> <img> 가 있다. 다른 요소들과 같은 줄에 머무르려고 하는 성향이 있고 가로 길이는 필요한 만큼만 차지한다.
+
+block은 <div><h1><p> 등이 있다. 새로운 줄에 가려고 하는 성향이 있고 가로를 최대한 많이 차지한다.
+
+display: block; 을 이용해 인위적으로 block으로 만들 수도 있다.
+display: inline; 을 이용해 인위적으로 inline으로 만들 수 있다.
+
+block은 width와 height를 정할 수 있지만
+inline은 설정을 해도 적용되지 않는다.
+
+inline-block을 설정할 수도 있다. (같은 줄에 머무르면서 가로 세로 길이를 가질 수 있는 성질 보유)
+
+<img>는 가로 세로 길이를 설정할 수 있는 특별한 inline이다.
+사진은 엄청 큰 글자라고 할 수 있다.
+vertical-align 을 사용해서 이미지의 top middle bottom 부분을 기준으로 글자를 정렬할 수 있다.
+text-align: center을 할 수 있다.
+하지만 display: block; margin-left: auto; margin-right: auto; 를 추천
+
+
+링크를 이미지로 만들고 싶으면
+<a href="https://google.com" target = "_blank"> <img src='images/google.png' width="200"> </a>  
+이렇게 쓸 수 있다.
+
+display: block;
+text-decoration: none;
+을 설정하고 
+
+<div> 클래스 내부에 <a></a>를 설정하면 그림과 글을 포함한 링크를 만들 수 있다.
+
+ -->
+
+ <!--
+html의 요소들은 각자의 상자 안에서 동작한다.
+그리고 baseline이라고 불리는 기준선을 받침으로 두고 글자가 새겨진다.
+이미지 같은 경우에는 이미지의 제일 밑이 baseline이다.
+height
+line-height 도 이용하자..
+
+vertical-align: top; -> 가장 높은 요소에 맞춰진다. 
+vertical-align: baseline; -> 기본 설정이다. 
+
+line-height: normal; -> 상속된 line-height 를 원래대로 돌린다.
+
+vertical align 순서
+
+먼저 가장 상위 태그를 알아내고 텍스트 x를 써서 위치를 대강 파악한다.
+line-height를 써서 해닫 x를 원하는 곳에 위치 시킨다.
+
+그 다음 정렬하고 싶은 하위 태그에 vertical-align을 시켜 원하는 곳에 위치 시킨다. 원하지 않는 결과가 나왔다면 상속을 확인한다.
+
+ -->
+
+ <!--
+position: static; -> 기본 설정이다.
+position: relative; -> 해당 요소가 자유자재로 움직일 수 있다.
+position: fixed;   -> 스크롤을 해도 화면 특정 공간에 그대로 있다. 주로 내비게이션 바에 적용한다.
+                   -> 이미지를 top bottom left right 등을 이용해 움직일 수 있다 (이동 방향 주의)
+position: absolute; -> 가장 가까운 positioning된 요소를 기준으로 작동한다.(position:static은 포지셔닝이 된 것이 아니다.) 예를 들어 <div>초록 사각형</div> 안에 <div>파란 사각형 </div>가 있고 파란 사각형에 이를 적용하면
+right: 10px; bottom: 30px; 같은 속성은 초록 사각형 오른쪽을 기준으로 10px을 남기고 초록 사각형 아래에 30px을 남기고 파란 사각형을 정렬한다.
+
+
+
+ -->
+
+ <!--
+float -> 요소를 띄운다.
+float: left;
+float: right;
+
+빨간색 파란색 노란색 div를 차례대로 둔 웹을 생각하자.
+빨간색의 width를 줄이고 float를 하면 짧아진 빨간색이 붕 뜨게 되고, 그 자리를 파란색과 노란색이 메꾼다.
+그러면 웹에서는 파란색의 일부분을 빨간색이 가린 모양새가 된다. 파란색에 글을 쓰면 빨간색이 가린 부분을 제외한 부분에서 글씨가 시작된다.
+왼쪽 구석에 사진이 있는 뉴스 기사를 쓰는 용도로 사용 가능하다.
+
+float를 쓰면 display 속성은 무시된다.
+ 
+clear: left;              -> 해당 속성의 왼쪽에 float 요소가 없게끔 한다. (본인이 다음줄로 간다.)
+clear: right;             -> 해당 속성의 왼쪽에 float 요소가 없게끔 한다. (본인이 다음줄로 간다.)
+
+clear 을 통해 플로트가 있는 상황에서의 문자 배치나 보더 형성에서 생길 수 있는 문제를 해결할 수 있다.
+ -->
+
+ <!--
+<ol> ordered list            -> <ol type="a"> <ol type="A"> 로 리스트 번호 타입을 정해줄 수 있다. 숫자가 기본이다. i, I 도 있다.
+<li> 로 list item을 생성할 수 있다
+
+
+<ul> unordered list. 동그라미로 리스트를 표시한다.
+
+<li> 의 display를 block으로 바꿔주면 리스트 순서매김이 사라진다.
+혹은 
+list-style-type 을 통해 모양을 바꿔줄 수 있다. (square, none 등..)
+
+ul 태그는 기본적으로 왼쪽에 패딩이 있다. 그리고 상하에 margin 속성이 기본적으로 부여된다.
+
+ul에 width를 주거나
+li에 margin-bottom, background-color, color 등을 입혀서 꾸밀 수 있다.
+ -->
